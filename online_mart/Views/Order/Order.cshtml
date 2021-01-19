@@ -1,0 +1,43 @@
+﻿@model IEnumerable<online_mart.Models.OrderClass>
+
+@{
+    ViewData["Title"] = "Order";
+}
+<style>
+    .order {
+        margin-top: 60px;
+    }
+</style>
+<div class="order"></div>
+<h1 style="color:crimson;">Order_History</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Item_Name</th>
+            <th scope="col">Info</th>
+            <th scope="col">Price</th>
+            <th scope="col">Payment_Status</th>
+            <th scope="col">User_Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr style="font-family:Cambria;">
+            <td>@item.Name</td>
+            <td>@item.Info</td>
+            <td>@item.Price</td>
+            @if (item.Status == "Pending...")
+            {
+                <td style="color:red;">@item.Status</td>
+            }
+            else
+            {
+                <td style="color:lawngreen;">@item.Status</td>
+            }
+            <td>@item.Address</td>
+            
+        </tr>
+         }
+        </tbody>
+</table>

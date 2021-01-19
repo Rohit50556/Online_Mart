@@ -1,0 +1,35 @@
+﻿@model IEnumerable<online_mart.Models.CartClass>
+
+@{
+    ViewData["Title"] = "CartItem";
+}
+<style>
+    .cart{
+        margin-top:100px;
+    }
+</style>
+<div class="cart">
+</div>
+<div class="row mt-20">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 mb-2">
+            <div class="card text-center">
+                <div class="card-body">
+                    <img src=@item.Url height="300" width="200" class="card-img-top">
+                    <h4>@item.Name</h4>
+
+                    <div class="chck">
+                        <span class="info">@item.Info</span>
+                    </div>
+                    <div style="color:blue;">Price: @item.Price</div>
+
+                </div>
+                <div class="card-footer text-muted">
+                    @Html.ActionLink("Order", "PlaceOrder", new { id = item.Id }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Remove", "RemoveCartItem", new { id = item.Id }, new { @class = "btn btn-danger" })
+                </div>
+            </div>
+        </div>
+    }
+</div>

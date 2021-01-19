@@ -1,0 +1,17 @@
+﻿<style>
+    .payment {
+        margin-top: 120px;
+        margin-left: 350px;
+        width: 400px;
+        height: 260px;
+        background-color: whitesmoke;
+        border-radius: 25px;
+        box-shadow: 5px 5px 18px black;
+    }
+</style>
+<div class="payment">
+    <div class="tag" style="margin-left: 90px;margin-top:30px;"><h4>Payment Method</h4></div><hr>
+    <div style="margin-left: 30px; margin-top:20px;"><button type="button" class="btn btn-warning"><a class="nav-link text-light" asp-area="" asp-controller="Order" asp-action="CashOnDelievery">Cash on Delivery</a></button></div><br>
+    <div style="margin-left: 200px; margin-top:-78px;"><button type="button" class="btn btn-warning"><a class="nav-link text-light" asp-area="" asp-controller="Payment" asp-action="netBanking">Net Banking</a></button></div><br>
+    <div style="margin-left: 90px;"><button type="button" class="btn btn-danger" style="width:200px;"><a class="nav-link text-light" asp-area="" asp-controller="home" asp-action="homepage">Cancle</a></button></div><br>
+</div>
